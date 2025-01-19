@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Lista de tareas</title>
 </head>
 <body>
+    {% if request.user.is_authenticated %}
+        <p>{{request.user}}</p>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesión</button>
+        </form>
+
+    {% else %}
+        <a href="{% url 'login' %}">Ingresar</a>
+    {% endif %}
+    <hr>
   <h1>Lista de pendientes</h1>
   <a href="{% url 'crear-tarea' %}">Crear nueva tarea</a>
   <table>
     <tr>
         <th>Elementos</th>
+        <th></th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -18,6 +31,8 @@
     <tr>
         <td>{{tarea.titulo}}</td>
         <td><a href="{% url 'tarea' tarea.id %}">Ver</a></td>
+        <td><a href="{% url 'editar-tarea' tarea.id %}">Editar</a></td>
+        <td><a href="{% url 'eliminar-tarea' tarea.id %}">Eliminar</a></td>
     </tr>
 
     {% empty %}

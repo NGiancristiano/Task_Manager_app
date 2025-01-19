@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar</title>
+</head>
+<body>
+
+  <a href="{% url 'tareas' %}">Volver</a>
+  <form method="POST">
+    {% csrf_token %}
+    <p>Estas por eliminar la tarea: {{tarea}}</p>
+    <input type="submit" value="Eliminar">
+  </form>
+</body>
+</html>
