@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar o Editar</title>
-</head>
-<body>
-    <h1>Formulario</h1>
-    <a href="{% url 'tareas' %}">Volver</a>
+{% extends 'base/principal.html' %}
+{% block content %}
+<div class="barra-superior">
+    <a class="volver" href="{% url 'tareas' %}">&#x1F830; Volver</a>
+</div>
+<div class="container-formulario">
     <form method="POST" action="">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Enviar">
     </form>
-</body>
-</html>
+</div>
+{% endblock content %}

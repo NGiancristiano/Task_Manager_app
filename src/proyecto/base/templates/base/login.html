@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-  <h1>Ingresar</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Ingresar">
-  </form>
-</body>
-</html>
+{% extends 'base/principal.html' %}
+{% block content %}
+<div class="barra-superior">
+    <h1>Ingresar</h1>
+</div>
+<div class="container-formulario">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Ingresar">
+    </form>
+    <p>No tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a> </p>
+</div>
+{% endblock content %}
