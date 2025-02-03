@@ -1,0 +1,22 @@
+{% extends 'base/principal.html' %}
+
+{% block content %}
+    <div class="barra-superior">
+        <h2>Lista Categorías</h2>
+        <a class="volver" href="{% url 'tareas' %}">&#x1F830; Volver</a>
+        <a href="{% url 'crear-categoria' %}">Crear Categoría</a>
+    </div>
+    <div class="envoltorio-items-tarea">
+        {% for categoria in categorias %}
+            <div class="envoltorio-tarea">
+                <div class="titulo-tarea">
+                    <i><a href="{% url 'editar-categoria' categoria.id %}" >{{categoria}}</a></i>
+                </div>
+                <a class="eliminar" href="{% url 'eliminar-categoria' categoria.id %}">&#x2A2F;</a>
+            </div>
+        {% empty %}
+            <h3>No hay elementos en esta lista</h3>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

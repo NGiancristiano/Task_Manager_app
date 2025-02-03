@@ -14,10 +14,38 @@
     {% else %}
     <a href="{% url 'login' %}">Ingresar</a>
     {% endif %}
+    <div>
+        {% if user.is_superuser %}
+            <a href="{% url 'categoria-lista' %}">Categorias</a>
+            <a href="{% url 'etiqueta-lista' %}">Etiquetas</a>
+
+
+        {% endif %}
+    </div>
 </div>
 <div class="envoltorio-crear-buscar">
     <form method="GET" style="display: flex;">
         <input type="text" name="area-buscar" value="{{valor_buscado}}">
+
+        <!-- Filtro por Categoría -->
+        <select name="categoria">
+            <option value="">Todas las categorías</option>
+            {% for categoria in categorias %}
+                 <option value="{{ categoria.id }}" {% if categoria.id == categoria_id %}selected{% endif %}>
+                    {{ categoria.nombre }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <!-- Filtro por Etiqueta -->
+        <select name="etiqueta">
+            <option value="">Todas las etiquetas</option>
+            {% for etiqueta in etiquetas %}
+                <option value="{{ etiqueta.id }}" {% if etiqueta.id == etiqueta_id %}selected{% endif %}>
+                    {{ etiqueta.nombre }}
+                </option>
+            {% endfor %}
+        </select>
         <input type="submit" value="Buscar">
     </form>
     <a class="enlace-crear" href="{% url 'crear-tarea' %}">&#x1F7A5;</a>

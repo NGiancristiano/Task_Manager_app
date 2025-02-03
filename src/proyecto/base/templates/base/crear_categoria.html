@@ -1,0 +1,15 @@
+{% extends 'base/principal.html' %}
+
+{% block content %}
+    <div class="barra-superior">
+        <h2>Crear Categoría</h2>
+        <a class="volver" href="{% url 'categoria-lista' %}">&#x1F830; Volver</a>
+    </div>
+    <div class="container-formulario">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+{% endblock content %}
