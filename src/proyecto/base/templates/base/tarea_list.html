@@ -14,15 +14,15 @@
     {% else %}
     <a href="{% url 'login' %}">Ingresar</a>
     {% endif %}
-    <div>
+
+</div>
+    <div class="barra-admin">
         {% if user.is_superuser %}
             <a href="{% url 'categoria-lista' %}">Categorias</a>
             <a href="{% url 'etiqueta-lista' %}">Etiquetas</a>
-
-
+            <a href="{% url 'lista-usuarios' %}">Admin Usuarios</a>
         {% endif %}
     </div>
-</div>
 <div class="envoltorio-crear-buscar">
     <form method="GET" style="display: flex;">
         <input type="text" name="area-buscar" value="{{valor_buscado}}">
@@ -48,6 +48,10 @@
         </select>
         <input type="submit" value="Buscar">
     </form>
+
+</div>
+<div class="crear-tarea">
+    <p>Crear Tarea</p>
     <a class="enlace-crear" href="{% url 'crear-tarea' %}">&#x1F7A5;</a>
 </div>
 

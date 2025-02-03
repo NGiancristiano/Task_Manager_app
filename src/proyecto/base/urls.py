@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import ListaPendientes, DetalleTarea, CrearTarea, EditarTarea, EliminarTarea, Logueo, Registro, \
     CrearCategoria, CrearEtiqueta, ListaCategoria, ListaEtiqueta, EditarCategoria, EditarEtiqueta, EliminarCategoria, \
-    ELiminarEtiqueta
+    ELiminarEtiqueta, ListaUsuarios, EditarUsuario, EliminarUsuario
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [path('',ListaPendientes.as_view(), name='tareas'),
@@ -19,5 +19,8 @@ urlpatterns = [path('',ListaPendientes.as_view(), name='tareas'),
                path('editar/categoria/<int:pk>', EditarCategoria.as_view(), name='editar-categoria'),
                path('editar/etiqueta/<int:pk>', EditarEtiqueta.as_view(), name='editar-etiqueta'),
                path('eliminar/categoria/<int:pk>', EliminarCategoria.as_view(), name='eliminar-categoria'),
-               path('eliminar/etiqueta/<int:pk>', ELiminarEtiqueta.as_view(), name= 'eliminar-etiqueta')
+               path('eliminar/etiqueta/<int:pk>', ELiminarEtiqueta.as_view(), name= 'eliminar-etiqueta'),
+               path('panel-admin/usuarios/', ListaUsuarios.as_view(), name = 'lista-usuarios'),
+               path('panel-admin/usuarios/editar/<int:pk>/', EditarUsuario.as_view(), name='editar-usuario'),
+               path('panel-admin/usuarios/eliminar/<int:pk>/', EliminarUsuario.as_view(), name='eliminar-usuario')
                ]

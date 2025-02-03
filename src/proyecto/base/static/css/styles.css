@@ -1,0 +1,185 @@
+        body {
+            background-color: #889fcf;
+            font-family: "Poppins", serif;
+            padding-top: 60px;
+        }
+        a {
+            text-decoration:none;
+            color: #027010;
+
+        }
+        a:hover {
+            color: #02510c;
+        }
+        a:visited {
+            color: #027010;
+        }
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: #80c0e5;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            border-radius: 5px;
+        }
+        .barra-superior{
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #84d5c8 0%, #5acbba 50%, #22ab96 100%);
+        }
+        input{
+            border-radius: 5px;
+        }
+        .envoltorio-tarea{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid rgb(225,225,225)
+        }
+        .titulo-tarea{
+            display: flex;
+        }
+        .titulo-tarea a{
+            margin-left: 10px
+        }
+        .icono-tarea-completa{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(105,162,105);
+            border-radius: 50px
+        }
+        .icono-tarea-incompleta{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(218,218,218);
+            border-radius: 50px
+        }
+        .eliminar{
+            font-weight: 900;
+            color: #EA4220;
+            font-size: 22px;
+            line-height: 0;
+        }
+        .eliminar:hover {
+            color: #660202;
+        }
+        .envoltorio-crear-buscar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+
+        }
+        select{
+            font-family: "Poppins", serif;
+            font-weight: 300;
+            font-style: normal;
+            border-radius:5px;
+        }
+        .enlace-crear{
+            color: #25ab5d;
+            text-decoration: none;
+            font-size: 42px;
+        }
+        .enlace-crear:hover{
+            color: #027010;
+        }
+        .enlace-crear:visited{
+            color: #25ab5d;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea{
+            border: 1px solid #d7ec6d;
+            border-radius:5px;
+            padding: 10px;
+            width: 90%;
+        }
+        label{
+            padding-top: 10px !important;
+            display: block;
+        }
+        .container-formulario{
+            padding: 20px;
+        }
+        .volver{
+            text-decoration: none;
+
+        }
+        .barra-admin{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #07756a;
+        }
+        .barra-admin a {
+            text-decoration: none;
+            color: white;
+        }
+        .barra-admin a:visited {
+            color: white;
+        }
+        .container-tabla{
+            padding:10px;
+        }
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #333;
+            color: white;
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .custom-table tr:hover {
+            background-color: #ddd;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 2px ;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .edit-btn {
+            background-color: #cae843;
+        }
+
+        .edit-btn:hover {
+            background-color:#bad92e;
+        }
+
+        .delete-btn {
+            background-color: #d9534f;
+        }
+
+        .delete-btn:hover {
+            background-color: #c9302c;
+        }
+        .crear-tarea {
+            display:flex;
+            justify-content:space-between;
+            padding: 0px 15px 0px 15px;
+            background-color: #93ecf2;
+        }
+

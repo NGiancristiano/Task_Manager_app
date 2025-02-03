@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -9,7 +10,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import reverse_lazy
 from .models import Tarea, Categoria, Etiqueta
-from .forms import TareaForm, CategoriaForm, EtiquetaForm
+from .forms import TareaForm, CategoriaForm, EtiquetaForm, UsuarioForm
+
 
 class ListaPendientes(LoginRequiredMixin, ListView):
     model = Tarea
@@ -206,6 +208,36 @@ class ELiminarEtiqueta(UserPassesTestMixin,DeleteView):
     context_object_name = 'etiqueta'
     template_name = 'base/etiqueta_confirm_delete.html'
     success_url = reverse_lazy('etiqueta-lista')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class ListaUsuarios(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = User
+    template_name = 'admin/lista_usuarios.html'
+    context_object_name = 'usuarios'
+
+    def test_func(self):
+        return self.request.user.is_superuser  # Solo los administradores pueden ver esta vista
+
+
+# Vista para editar usuarios
+class EditarUsuario(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = UsuarioForm
+    template_name = 'admin/editar_usuario.html'
+    success_url = reverse_lazy('lista-usuarios')
+
+    def test_func(self):
+        return self.request.user.is_superuser  # Solo los administradores pueden editar usuarios
+
+
+# Vista para eliminar usuarios
+class EliminarUsuario(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = User
+    template_name = 'admin/eliminar_usuario.html'
+    success_url = reverse_lazy('lista-usuarios')
 
     def test_func(self):
         return self.request.user.is_superuser

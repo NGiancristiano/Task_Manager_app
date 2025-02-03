@@ -1,0 +1,16 @@
+{% extends 'base/principal.html' %}
+
+{% block content %}
+<div class="barra-superior">
+    <h2>Editar Usuario</h2>
+    <a class="volver" href="{% url 'lista-usuarios' %}">&#x1F830; Volver</a>
+</div>
+<div class="container-formulario">
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar cambios</button>
+</form>
+</div>
+
+{% endblock content %}
