@@ -62,15 +62,15 @@ Accede a la aplicación en **http://127.0.0.1:8000/**
 
 ## Capturas de Pantalla 📸
 
-![Vista previa de la pantalla principal (Home Screen)](static/img/HomePageScreen.png)
+![Vista previa de la pantalla principal (Home Screen)](src/proyecto/base/static/img/HomePageScreen.png)
 
-![Vista previa del proyecto](static/img/EditScreen.png)
+![Vista previa del proyecto](src/proyecto/base/static/img/EditScreen.png)
 
-![Vista previa del proyecto](static/img/EditarUsuarioScreen.png)
+![Vista previa del proyecto](src/proyecto/base/static/img/EditarUsuarioScreen.png)
 
-![Vista previa del proyecto](static/img/ListasScreen.png)
+![Vista previa del proyecto](src/proyecto/base/static/img/ListasScreen.png)
 
-![Vista previa del proyecto](static/img/UsuariosScreen.png)
+![Vista previa del proyecto](src/proyecto/base/static/img/UsuariosScreen.png)
 
 ## Contribución 🤝
 Si deseas contribuir, ¡siéntete libre de hacer un **fork** y enviar un **pull request**! 😃
