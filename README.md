@@ -13,7 +13,7 @@ Task Manager App es una aplicación web desarrollada con **Django** que permite 
 ## Tecnologías Utilizadas 💻
 - **Backend:** Django (Python)
 - **Base de Datos:** SQLite / PostgreSQL (opcional)
-- **Frontend:** HTML, CSS, Bootstrap
+- **Frontend:** HTML, CSS
 - **Autenticación:** Django Authentication System
 
 ## Instalación 🚀
@@ -72,8 +72,6 @@ Accede a la aplicación en **http://127.0.0.1:8000/**
 
 ![Vista previa del proyecto](src/proyecto/base/static/img/UsuariosScreen.png)
 
-## Contribución 🤝
-Si deseas contribuir, ¡siéntete libre de hacer un **fork** y enviar un **pull request**! 😃
 
 ## Licencia 📜
 Este proyecto está bajo la licencia **MIT**.
